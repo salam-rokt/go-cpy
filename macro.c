@@ -1,4 +1,5 @@
 #include "macro.h"
+#include "datetime.h"
 
 int _go_Py_EnterRecursiveCall(const char *where) {
     return Py_EnterRecursiveCall(where);
@@ -110,4 +111,40 @@ int _go_PyObject_DelAttrString(PyObject *o, const char *attr_name) {
 
 int _go_PyObject_TypeCheck(PyObject *o, PyTypeObject *type) {
     return PyObject_TypeCheck(o, type);
+}
+
+void _go_PyDatetime_Init() {
+	PyDateTime_IMPORT;
+}
+
+int _go_PyDateTime_Check(PyObject *obj) {
+	return PyDateTime_Check(obj);
+}
+
+int _go_PyDateTime_CheckExact(PyObject *obj) {
+	return PyDateTime_CheckExact(obj);
+}
+
+PyObject *_go_PyDateTime_FromDateAndTime(datetime_tpl tpl) {
+	return PyDateTime_FromDateAndTime(
+		tpl.year,
+		tpl.month,
+		tpl.day,
+		tpl.hour,
+		tpl.minute,
+		tpl.second,
+		tpl.microsecond
+	);
+}
+
+datetime_tpl _go_PyDateTime_GetDateTime(PyObject *obj) {
+	datetime_tpl dt;
+	dt.year = PyDateTime_GET_YEAR(obj);
+	dt.month = PyDateTime_GET_MONTH(obj);
+	dt.day = PyDateTime_GET_DAY(obj);
+	dt.hour = PyDateTime_DATE_GET_HOUR(obj);
+	dt.minute = PyDateTime_DATE_GET_MINUTE(obj);
+	dt.second = PyDateTime_DATE_GET_SECOND(obj);
+	dt.microsecond = PyDateTime_DATE_GET_MICROSECOND(obj);
+	return dt;
 }
