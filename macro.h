@@ -46,4 +46,19 @@ int _go_PyObject_DelAttrString(PyObject *o, const char *attr_name);
 
 int _go_PyObject_TypeCheck(PyObject *o, PyTypeObject *type);
 
+void _go_PyDatetime_Init();
+int _go_PyDateTime_Check(PyObject *obj);
+int _go_PyDateTime_CheckExact(PyObject *obj);
+
+typedef struct datetime_tpl {
+    int year;
+    unsigned int microsecond;
+    unsigned char month;
+    unsigned char day;
+    unsigned char hour;
+    unsigned char minute;
+    unsigned char second;
+} datetime_tpl;
+PyObject *_go_PyDateTime_FromDateAndTime(datetime_tpl tpl);
+datetime_tpl _go_PyDateTime_GetDateTime(PyObject *obj);
 #endif
