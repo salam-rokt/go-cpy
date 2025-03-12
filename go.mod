@@ -1,4 +1,4 @@
-module github.com/salam-rokt/go-cpy/v1
+module github.com/salam-rokt/go-cpy
 
 go 1.21
 
