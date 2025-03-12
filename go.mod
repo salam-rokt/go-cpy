@@ -1,4 +1,4 @@
-module go.nhat.io/cpy/v3
+module github.com/salam-rokt/go-cpy/v1
 
 go 1.21
 
