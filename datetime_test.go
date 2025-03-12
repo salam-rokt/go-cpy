@@ -1,8 +1,8 @@
 package cpy_test
 
 import (
+	"github.com/salam-rokt/go-cpy"
 	"github.com/stretchr/testify/assert"
-	"go.nhat.io/cpy/v3"
 	"testing"
 	"time"
 )

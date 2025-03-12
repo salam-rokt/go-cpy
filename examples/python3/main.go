@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"go.nhat.io/cpy/v3"
+	"github.com/salam-rokt/go-cpy"
 )
 
 func main() {

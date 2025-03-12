@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"go.nhat.io/cpy/v3"
+	"github.com/salam-rokt/go-cpy"
 )
 
 func TestRunFile(t *testing.T) {

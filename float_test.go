@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"go.nhat.io/cpy/v3"
+	"github.com/salam-rokt/go-cpy"
 )
 
 func TestPyFloatCheck(t *testing.T) {
